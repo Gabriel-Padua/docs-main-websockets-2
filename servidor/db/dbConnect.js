@@ -1,9 +1,12 @@
 import { MongoClient } from "mongodb";
 
-const cliente = new MongoClient(
-  "mongodb+srv://alura:123@aluracluster.lp6gdyc.mongodb.net/?retryWrites=true&w=majority"
-);
+import dns from "node:dns/promises";
 
+dns.setServers(["1.1.1.1", "1.0.0.1"]);
+
+const cliente = new MongoClient(
+  "mongodb+srv://gabrielpaduat_db_user:root@socketio.2mlmoic.mongodb.net/?appName=Socketio",
+);
 let documentosColecao;
 
 try {
